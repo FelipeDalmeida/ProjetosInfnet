@@ -3,7 +3,7 @@
 
 
 
-.cabecalho{
+header{
     background: rgb(10, 113, 197);
     /*padding: 0px 20px 0px 20px;*/
     display: flex;
@@ -60,7 +60,7 @@
     .conteudo_site, .social{
         display: inline;
     }
-    .cabecalho{
+    header{
         height: auto;
         width: 100%;
         flex-direction: row;

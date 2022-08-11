@@ -7,7 +7,7 @@ body{
 
 
 
-.home, .sobre, .formacao,.exp, .publi{
+main{
     
     height: 100vh;
     width:90%
@@ -28,7 +28,7 @@ body{
     
 }
 
-.home h1, .sobre h1, .formacao h1,.exp h1, .publi h1{
+h1{
     font-weight: bold;
     font-size: 3em;
     font-family: 'Mouse Memoirs';
@@ -37,7 +37,7 @@ body{
 }
 
 
-.formacao li, .exp li, .publi li{
+main li{
     list-style: none;
     padding: 5px 0 5px 0;
 }
@@ -108,7 +108,7 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
-.sobre p{
+.texto_sobre p{
     font-family: 'Montserrat', sans-serif;
     margin:10px auto;
     font-size: 1.2em;
@@ -136,8 +136,17 @@ body{
     align-items: center;
 }
 
+@media screen and (max-width: 900px) and (min-width:750px){
+    header{
+        width: 13%;
+    }
+    main{
+        width:83%;
+    }
+}
+
 @media screen and (max-width: 750px){
-    .home, .sobre, .formacao, .exp, .publi{
+    main{
         width: 100%;
         height: auto;
         
@@ -155,8 +164,14 @@ body{
         width: 90%;
         margin: 50px auto;
     }
-    .home h1, .sobre h1, .formacao h1,.exp h1, .publi h1{
+    h1{
         margin: 100px 0 50px 0;
     }
+
+    .img_publi img{
+        width: 60%;
+    }
+
+    
 }
 
