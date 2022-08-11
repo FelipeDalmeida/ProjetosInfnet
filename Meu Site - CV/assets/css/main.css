@@ -1,0 +1,162 @@
+body{
+    display: flex;
+    display: flex;
+    flex-direction: row-reverse;
+    background: #ddd;
+}
+
+
+
+.home, .sobre, .formacao,.exp, .publi{
+    
+    height: 100vh;
+    width:90%
+    
+    
+    
+    
+}
+
+.conteudo_home{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    font-family: 'Mouse';
+
+    padding: 50px 0 0 0;
+    
+}
+
+.home h1, .sobre h1, .formacao h1,.exp h1, .publi h1{
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Mouse Memoirs';
+    margin: 50px 0 50px 0;
+    text-align: center;
+}
+
+
+.formacao li, .exp li, .publi li{
+    list-style: none;
+    padding: 5px 0 5px 0;
+}
+
+.titulacao, .cargo, .artigo{
+    color: rgb(10, 113, 197);
+    padding: 10px 0 10px 0;
+    
+}
+
+.titulacao li, .cargo li, .artigo li{
+    color:black;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.artigo a{
+    text-decoration: none;
+    color: rgb(10, 113, 197);
+    
+}
+.artigo a:hover{
+    color: goldenrod;
+}
+
+.instituto:before{
+    content: "🎓";
+}
+.empresa:before{
+    content: "🔧";
+}
+
+.tempo:before{
+    content: "⌛";
+}
+
+
+.foto_home{
+    align-items: center;
+
+}
+
+.foto_home img{
+    height: 200px;
+    border: 1px solid rgb(10, 113, 197);;
+    border-radius: 108px;
+    background: rgb(10, 113, 197);
+
+}
+
+.texto_home{
+    width: 40%;
+    text-align: justify;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.texto_sobre{
+    margin: 20px 20px;
+    text-align: justify;
+    
+}
+
+
+
+.texto_formacao, .texto_exp, .texto_publi{
+    margin: 40px 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sobre p{
+    font-family: 'Montserrat', sans-serif;
+    margin:10px auto;
+    font-size: 1.2em;
+
+}
+.img_formacao, .img_exp{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.img_formacao img, .img_exp img{
+    width:20%;
+    padding: 0 15px 50px 15px 
+}
+
+.img_publi img{
+    width: 30%;
+    padding: 0 15px 50px 15px 
+}
+
+.img_publi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 750px){
+    .home, .sobre, .formacao, .exp, .publi{
+        width: 100%;
+        height: auto;
+        
+
+    }
+    .conteudo_home{
+      flex-direction: column;
+      padding: 0px 0px;
+    }
+
+    .foto_home{
+        margin: 50px auto;
+    }
+    .texto_home, .texto_sobre{
+        width: 90%;
+        margin: 50px auto;
+    }
+    .home h1, .sobre h1, .formacao h1,.exp h1, .publi h1{
+        margin: 100px 0 50px 0;
+    }
+}
+
