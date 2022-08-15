@@ -1,0 +1,115 @@
+html{
+    scroll-behavior: smooth;
+}
+
+main{
+    background: linear-gradient(45deg, #d5f80c,#3bf80c);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.banner{
+    background-image: url(../img/twitch-casimiro-reproducao-scaled-1280x720.jpg);
+    width: 100%;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 102px);
+    float: left;
+}
+
+.banner h1{
+    font-weight: bold;
+    text-align: center;
+    color: #ff0000;
+    margin-top: 5%;
+    font-size: 4em;
+    font-family: 'Oleo Script Swash Caps', cursive;
+
+}   
+
+.sobre{
+    padding: 20px 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.sobre h1, .trabalhos h1, .premios h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: justify;
+
+}
+.trabalhos h1, .premios h1{
+    padding: 20px 20px;
+}
+
+
+.sobre p{
+    text-align: justify;
+}
+.txt-sobre{
+    width: 50%;
+}
+.ft-sobre img{
+    width: 500px;
+    float: right;
+}
+
+
+.trabalhos, .premios{
+    padding: 20px 40px;
+}
+.filmes, .series{
+    text-align: -webkit-center;
+    padding: 20px 20px;
+}
+.teatro{
+    padding: 20px 20px;
+}
+.filmes h2, .series h2,.teatro h2{
+    text-align: left;
+}
+
+table, thead, tr,td,th{
+    border:1px solid black;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+
+
+th, td{
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.premios ul{
+    list-style: none;
+    padding: 0px 20px;
+}
+.premios li{
+    padding: 10px 0;
+}
+
+.premios li::before{
+    content: "🏆";
+}
+
+footer{
+    background:linear-gradient(45deg, #d5f80c,#3bf80c);
+}
+
+footer h2{
+    text-align: center;
+    margin: 20px;
+}
+
+footer a{
+    color: #fff;
+    font-size: 1em;
+    
+}

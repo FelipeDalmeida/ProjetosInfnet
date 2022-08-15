@@ -1,0 +1,135 @@
+*{margin:0; padding:0;}
+
+header{
+    background: linear-gradient(45deg, rgb(176, 252, 76), rgb(10, 192, 19));
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ft-logo{
+    padding: 5px 40px;
+}
+.menu{
+    margin: 0 50px;
+    
+}
+
+.menu>ul{
+    list-style: none;
+    display: flex;
+    padding: 0 10px;
+    background:  #34ec06;
+    border-radius: 10px;
+    
+    
+    
+}
+
+
+.menu>ul>li{
+    padding: 20px 0;
+    position: relative;
+}
+
+.menu>ul>li>a, .menu>ul>li>a:active{
+    text-decoration: none;
+    background: #34ec06;
+    color:#fff;
+    padding: 20px;
+    transition: all 0.3s linear;
+    position: relative;
+}
+
+.menu>ul>li>a:hover, .menu>ul>li>a:active, .dropdown a:hover, .dropdown a:active{
+    background: linear-gradient(45deg, rgb(176, 252, 76), rgb(10, 192, 19));
+}
+
+/*.menu li:first-child a{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}*/
+
+/*.menu li:last-child a{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}*/
+
+
+/*
+.menu>ul>li>a:before, .dropdown::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background:goldenrod;
+    left:0;
+    top:0;
+    transition: all linear 0.4s;
+
+}
+
+.menu>ul>li>a:hover::before, .dropdown:hover::before{
+    width: 100%;
+}
+
+.menu>ul>li>a:before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0px;
+    background:linear-gradient(45deg, rgb(230, 235, 223), rgb(10, 192, 19))
+    left:0;
+    bottom:0;
+    transition: all linear 0.4s;
+}
+.menu>ul>li>a:hover::before{
+    height: 100%;
+}
+
+*/
+.menu>ul>li>a::after, .dropdown:after{
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    right:0;
+    bottom: 0;
+    transition: all linear 0.4s;
+}
+
+.menu>ul>li>a:hover::after, .dropdown:hover::after{
+    width: 100%;
+}
+
+.dropdown{
+    display: none;
+    
+    position: absolute;
+    list-style: none;
+    top: 57px;
+}
+
+.dropdown a{
+    text-decoration: none;
+    background: #34ec06;
+    color:#fff;
+    padding:20px;
+    float: left;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    width: 64px;
+    text-align: center;
+    
+}
+
+nav>ul>li:hover>.dropdown{
+    display: flex;
+    flex-direction: column;
+}
+
+
