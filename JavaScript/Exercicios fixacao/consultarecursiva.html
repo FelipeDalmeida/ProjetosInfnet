@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <ul>
+        <li>
+            <a href="#">Item 1</a>
+            <ul>
+                <li>
+                    <a href="#">Subitem 1.1</a>
+                </li>
+                <li>
+                    <a href="#">Subitem 1.1</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+        <li>
+            <a href="#">Item 4</a>
+            <ul>
+                <li>
+                    <a href="#">Subitem 4.4</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Item 5</a>
+            <li>
+                <a href="#">Item 1</a>
+                <ul>
+                    <li>
+                        <a href="#">Subitem 1.1</a>
+                    </li>
+                    <li>
+                        <a href="#">Subitem 1.1</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li>
+                <a href="#">Item 4</a>
+                <ul>
+                    <li>
+                        <a href="#">Subitem 4.4</a>
+                        <li>
+                            <a href="#">Item 1</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Subitem 1.1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Subitem 1.1</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                        <li>
+                            <a href="#">Item 4</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Subitem 4.4</a>
+                                    <li>
+                                        <a href="#">Item 1</a>
+                                        <ul class="class-oculta">
+                                            <li>
+                                                <a href="#">Subitem 1.1</a>
+                                            </li>
+                                            <li class="class-oculta">
+                                                <a href="#">Subitem 1.1</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Item 2</a></li>
+                                    <li><a href="#">Item 3</a></li>
+                                    <li>
+                                        <a href="#">Item 4</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Subitem 4.4</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Item 5</a></li>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Item 5</a></li>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Item 5</a></li>
+        </li>
+    </ul>
+    <script>
+        // const ul=document.getElementById('ul')
+        const ul=document.querySelector('ul')
+        function verificaRecursivo(parente){
+            const filhos=Array.from(parente.children);
+            console.log(parente)
+            if(filhos.length>0){
+                for(filho of filhos){
+                    
+                    verificaRecursivo(filho)
+                }
+            } else{
+                console.log("não tem filho")
+                console.log("////////////////")
+            }
+        }
+        verificaRecursivo(ul)
+    </script>
+</body>
+</html>

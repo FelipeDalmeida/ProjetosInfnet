@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" class="butao" id="1">Clicar</button>
+    <button type="button" class="butao" id="2">Clicar</button>
+    <button type="button" class="butao" id="3">Clicar</button>
+    <button type="button" class="butao" id="4">Clicar</button>
+    <button type="button" class="butao" id="5">Clicar</button>
+    <button type="button" class="butao" id="6">Clicar</button>
+    <button type="button" class="butao" id="7">Clicar</button>
+    <button type="button" class="butao" id="8">Clicar</button>
+    <button type="button" class="butao" id="9">Clicar</button>
+
+
+    <script>
+        const butoes=document.querySelectorAll('.butao')
+        console.log(butoes)
+        
+
+        function funcao(event){
+            console.log(event.target.id)
+            
+            const aleatorio=`${Math.random()*100}px`
+            console.log(aleatorio)
+            document.getElementById(event.target.id).style.height=aleatorio
+            
+        }
+        // for(butao of butoes){
+        //     butao.addEventListener('click',funcao)
+        // }
+        butoes.forEach(function(butao){
+            butao.addEventListener('click',funcao)
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
+
+    *{
+        font-family: 'Oswald', sans-serif;
+
+    }
+
+    body{
+        background-color: #333;
+        margin: 0;
+    }
+    #digitacao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #sentenca{
+        color: #fff;
+        font-size: 42px;
+        font-weight: 500;
+    }
+    .cursor{
+        display: inline-block;
+        width: 2px;
+        height: 42px;
+        background-color: #fff;
+        margin-left: 0.5em;
+        animation: pisca 0.6s linear infinite alternate;
+    }
+    @keyframes pisca{
+        0% { opacity: 1; }
+        40% { opacity: 1; }
+        60% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+</style>
+<body>
+    <div id="digitacao">
+        <span id="sentenca" class="sentenca"></span>
+        <span class="cursor"></span>
+    </div>
+    <script>
+        const sentenca=document.getElementById('sentenca')
+
+        function digitarSentenca(palavra,delay){
+            sentenca.innerText=""
+            const letters=palavra.split("")
+
+            let i=0;
+
+            let interval=setInterval(function(){
+                let texto=sentenca.innerHTML;
+                sentenca.innerHTML=texto+letters[i];
+                i++;
+                if(i>=letters.length){
+                    clearInterval(interval);
+
+                }
+            },delay)
+        }
+
+        let palavra="Mel cara de pastel"
+        let delay=100;
+        digitarSentenca(palavra,delay)
+        let interval = setInterval(function(){
+            digitarSentenca(palavra, delay);
+        }, (delay * palavra.length) * 3)
+
+    </script>
+</body>
+</html>

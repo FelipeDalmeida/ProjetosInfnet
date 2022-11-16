@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Calculadora Investimento</title>
+</head>
+<body>
+
+    <main>
+        <div class="row">
+        <form action="" class="row col-md-6 col-12 calculadoraRendaFixa">
+            <div class="tipo col-12">
+                <h6>Tipo de Investimento</h6>
+                <input type="radio" id="cdb" name="tipo_aplicacao" checked>
+                <label for="cdb">CDB</label>
+                <input type="radio" id="lci/lca" name="tipo_aplicacao">
+                <label for="lci/lca">LCI/LCA</label>
+            </div>
+            <div class="tipo col-md-6 col-12">
+                <h6>Investimento inicial</h6>
+                <label for="invIni">R$</label>
+                <input type="number" id="invIni" name="invIni" value="0">
+            </div>    
+            <div class="tipo col-md-6 col-12">
+                <h6>Investimento mensal</h6>
+                <label for="invMen">R$</label>
+                <input type="number" id="invMen" name="invMen" value="0">
+            </div>
+            <div class="tipo col-md-6 col-12">
+                <h6>Período em</h6>
+                <label for="tempo">⏱</label>
+                <input type="number" id="tempo" name="tempo">
+                <select id="tempoInv" name="tempoInv">
+                    <option value="mensal">Mensal</option>
+                    <option value="anual">Anual</option> 
+                </select>
+            </div> 
+            <div class="tipo col-md-6 col-12">
+                <h6>Taxa de juros anual</h6>
+                <label for="taxaJuros">%</label>
+                <input type="number" id="taxaJuros" name="taxaJuros">   
+            </div>
+            <div class="row">
+                <button type="button" onclick="calcular()" class="offset-3 col-3">Calcular</button>
+                <input type="reset" value="Resetar" class="offset-1 col-3"> 
+            </div>    
+        </form>
+
+
+        <div class="col-md-6 col-12 resultado">
+            <table class="table">
+                <thead>
+                    <th>Descrição</th>
+                    <th>VALOR</th>
+                </thead>
+                <tr>
+                    <td>Total bruto</td>
+                    <td id="totalBruto"></td>
+                </tr>
+                <tr>
+                    <td>Dinheiro investido</td>
+                    <td id="totalInvestido"></td>
+                </tr>
+                <tr>
+                    <td>Valor ganho em juros</td>
+                    <td id="valorJuros"></td>
+                </tr>
+                <tr>
+                    <td>Imposto de renda sobre a rentabilidade</td>
+                    <td id="imposto"></td>
+                </tr>
+                <tr>
+                    <td>Valor pago em imposto de renda</td>
+                    <td id="valorIr"></td>
+                </tr>
+                <tr>
+                    <td>Total líquido a receber</td>
+                    <td id="totalLiquido"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script src="assets/js/regas.js"></script>
+    
+</body>
+</html>

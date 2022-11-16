@@ -1,0 +1,83 @@
+<!-- Faça um programa que pergunte quanto a pessoa quer emprestado, faça o cálculo do empréstimo a juros  compostos. Para fazer o empréstimo solicite:
+
+    – Quanto ela quer emprestado?
+
+   – Em quantos meses ela vai pagar?
+
+       *A Taxa de juros será de 2% ao mês.
+
+        Segue a fórmula dos Juros compostos:   M = C x (1+i)^t    ‌
+
+    M é o valor final após a aplicação dos juros
+
+    C o valor que a pessoa vai pegar emprestrado
+
+    i é a taxa de juros
+
+    t é o tempo
+
+    Ao final mostre quanto a pessoa pagará após a aplicação dos juros 
+
+DICA: Use Math.pow() para o cálculo de potência que está sendo simbolizado pelo acento circunflexo (^) sabendo que ^t é o mesmo que Math.pow((1+i), t). Com uma dica dessa fica até fácil rsrs.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora Empréstimo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <style>
+    .calculadora{
+        /* border:1px solid rgb(30, 81, 219);
+        border-radius: 20px; */
+        margin-top: 40px;
+    }
+    .resultado{
+        display: flex;
+        align-items: center;
+    
+        width: 100%;
+        border: 1px solid #ccc;
+        height: 40px;
+        border-radius: 5px;
+        
+    }
+    .resultado>p{
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .butao{
+        margin:20px
+    }
+  </style>
+  <body>
+    
+    <div class="calculadora offset-1 col-10  offset-xl-4 col-xl-4">
+        <label for="valor" class="form-label">Quanto quer emprestado?</label>
+        <input type="text" class="form-control" id="valor">
+        <label for="meses" class="form-label">Em quantos meses vai pagar?</label>
+        <input type="text" class="form-control" id="meses">
+        <button class="butao btn btn-primary" onclick="calcular()">Calcular</button>
+        <div class="resultado">
+            <p id="valorResultado"></p>
+        </div>
+      </div>
+    <script>
+        const calcular=()=>{
+            valorInicial=parseFloat(document.getElementById('valor').value.replace(",","."));
+            meses=parseInt(document.getElementById('meses').value);
+
+            valorFinal=jurusComp(valorInicial,meses);
+
+            document.getElementById('valorResultado').innerHTML=`O valor final será de R$ ${valorFinal.toFixed(2)}`
+
+        }
+
+        const jurusComp = (c,t,i=0.02)=> c*Math.pow((1+i),t);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

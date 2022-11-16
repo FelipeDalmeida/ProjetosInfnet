@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/header.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Open+Sans&family=Oxygen:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/dfe143884b.js" crossorigin="anonymous"></script>
+        <title>Minhas Publicações</title>
+</head>
+<body>
+    <header class="col-xl-1 col-md-2 col-12">
+        
+        <nav class="nav-site">
+        
+            <ul class="ul-modified">
+                <li class="conteudo_site"><a href="index.html">Home</a></li>
+                <!-- <li class="conteudo_site"><a href="sobre.html">Sobre Mim</a></li> -->
+                <li class="conteudo_site"><a href="formacao.html">Formação</a></li>
+                <li class="conteudo_site"><a href="exp.html">Experiência</a></li>
+                <li class="conteudo_site"><a href="publicacoes.html">Publicações</a></li>
+                  
+                
+            </ul>
+        
+        </nav>
+
+        <nav class="nav-mobile">
+            <!-- <ul class="ul-modified">
+                <li class="dropup"><i id="menu_mobile" class="fa-solid fa-bars"></i>
+                    <ul class="dropdown">
+                        <li class="conteudo_site"><a href="index.html">Home</a></li>
+                       
+                        <li class="conteudo_site"><a href="formacao.html">Formação</a></li>
+                        <li class="conteudo_site"><a href="exp.html">Experiência</a></li>
+                        <li class="conteudo_site"><a href="publicacoes.html">Publicações</a></li>
+                        
+                        
+                    </ul>
+                </li>
+            </ul> -->
+            <button class="dropup btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i id="menu_mobile" class="fa-solid fa-bars"></i></button>
+            <div class="canvas-modified offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                  
+                  <button type="button" class="canvas-btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="canvas-ul">
+                    <li class="conteudo_site_mobile"><a href="index.html">Home</a></li>
+                    
+                    <li class="conteudo_site_mobile"><a href="formacao.html">Formação</a></li>
+                    <li class="conteudo_site_mobile"><a href="exp.html">Experiência</a></li>
+                    <li class="conteudo_site_mobile"><a href="publicacoes.html">Publicações</a></li>
+                    
+      
+                  </ul>
+                </div>
+              </div>
+        </nav>
+
+        <nav class="nav-social">
+            <ul class="ul-modified ul-modified-social">
+                <li class="social animacao"><a href="https://linkedin.com/in/felipe-seabra-d-almeida-a7478b159" title="Link para linkedin" target="_blank"><i class='fab fa-linkedin-in'></i></a></li>
+                <li class="social animacao"><a href="https://www.instagram.com/felipe_seabraa/" title="Link para instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="social animacao"><a href="https://api.whatsapp.com/send?phone=5521976595909"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li class="social animacao"><a href="https://github.com/FelipeDalmeida"><i class="fa-brands fa-github"></i></a></li>
+                <li class="social animacao"><button type="button" class="butao contato btn" data-bs-toggle="modal" data-bs-target="#contatoModal">
+                    Contato
+                  </button></li>
+                <!-- Modal -->
+                    <div class="modal-modified modal" id="contatoModal" tabindex="-1" aria-labelledby="contatoModalLabel" aria-hidden="true">
+                        <div class="modal-dialog-modified modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content-modified modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="contatoModalLabel">Contato</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form action="https://formsubmit.co/felipe_dalmeida@hotmail.com" method="POST">
+                                <label for="nome" class="form-label">Nome:</label><br>
+                                <input type="text" class="form-control" id="nome">
+                                <label for="telefone" class="form-label">Celular:</label><br>
+                                <input type="text" class="form-control" id="celular">
+                                <label for="email" class="form-label">Email:</label><br>
+                                <input type="email" class="form-control" id="email" placeholder="nome@mail.com">
+                                <label for="mensagem" class="form-label">Motivo de contato:</label>
+                                <textarea class="form-control" id="mensagem" rows="3"></textarea>
+                                <button class="butao butao-form btn" type="submit">Enviar</button>
+                            </form>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                <!-- Fim do modal -->
+            </ul>
+        </nav>
+    
+</header>
+        <main class="col-xl-11 col-md-10 col-12">
+            <h1>Publicações</h1>
+			<div class="texto texto_publi">
+                <ul class="ul-modified">
+                    <li class="artigo"><h2><a href="https://www.mdpi.com/2071-1050/13/16/9181/htm">On the Hibernating Electronic Waste in Rio de Janeiro Higher Education Community: An Assessment of Population Behavior Analysis and Economic Potential</a></h2>
+                        <ul class="ul-modified">
+                            <li class="revista">Journal: Sustainability</li>
+                            <li class="doi">DOI: 10.3390/su13169181</li>
+                            <li>Keywords: urban mining; hibernating stocks; E-waste; recycling; small electronic devices</li>
+                            
+                        </ul>
+                    </li>
+                    <li class="artigo"><h2><a href="https://www.mdpi.com/1996-1944/14/20/6228/htm">Electronic Waste Low-Temperature Processing: An Alternative Thermochemical Pretreatment to Improve Component Separation</a></h2>
+                        <ul class="ul-modified">
+                            <li class="revista">Journal: Materials</li>
+                            <li class="doi">DOI: 10.3390/ma14206228</li>
+                            <li>Keywords: low-temperature processing; WEEE (waste of electric and electronic equipment) recycling; materials separation; process characterization; SEM/EDS</li>
+                        </ul>
+                    </li>
+                    <li class="artigo"><h2><a href="https://www.mdpi.com/2673-4060/3/3/23/htm">Economic analysis of a conceptual industrial route for printed circuit boards processing based on mass and energy balances</a></h2>
+                        <ul class="ul-modified">
+                            <li class="revista">Journal: World</li>
+                            <li class="doi">DOI:10.3390/world3030023</li>
+                            <li>Keywords: Solid waste; waste management; material flow analyses; sensitivity analysis; recycling; E-waste</li>
+                            						    
+                        </ul>
+                    </li>
+                    
+                </ul>
+            
+            </div>
+            <div class="img_publi col-12 row">
+                <div class="col-md-4 col-12"><img src="./assets/img/sustainability-logo.webp" alt="Logo Sustainability"></div>
+                <div class="col-md-4 col-12"><img src="./assets/img/materials-logo.webp" alt="Logo Materials"></div>
+                <div class="col-md-4 col-12"><img src="./assets/img/world-logo.png" alt="Logo World"></div>
+
+            </div>
+            
+        </main>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.button-principal{
+    color:"#fff";
+    background-color: rgb(255, 101, 0);
+    text-transform: uppercase;
+    width:100%;
+}
+
+.button-principal:hover{
+    background-color: rgb(227, 82, 20);
+}
+
+.button-secundario{
+    color: rgb(227, 82, 20);
+    background-color:#fff;
+    text-transform: uppercase;
+}
+
+.button-secundario:hover{
+    color: #fff;
+    background-color:rgb(227, 82, 20);
+}
+
+.pos-relative{
+    position: relative;
+}

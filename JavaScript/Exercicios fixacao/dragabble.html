@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .quadrado{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .quadradoRed{
+            margin:5px;
+            border:2px dashed black;
+            width: 50px;
+            height: 50px;
+            float: left;
+            background-color: red;
+            font-size: 42px;
+            text-align-last: center;
+
+        }
+
+          
+        
+        #blue{
+            background-color: blue;
+            font-size: 90px;
+            text-align-last: center;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="quadrado" id="blue" ondragover="dragOver(event)" ondrop="soma(event)">0</div>
+
+    <div class="quadradoRed" id="id1" draggable="true" ondragstart="inicioDrag(event)" ondragend="">1</div>
+    <div class="quadradoRed" id="id2" draggable="true" ondragstart="inicioDrag(event)" ondragend="">2</div>
+    <div class="quadradoRed" id="id3" draggable="true" ondragstart="inicioDrag(event)" ondragend="">3</div>
+    <div class="quadradoRed" id="id4" draggable="true" ondragstart="inicioDrag(event)" ondragend="">4</div>
+    <div class="quadradoRed" id="id5" draggable="true" ondragstart="inicioDrag(event)" ondragend="">1000</div>
+    <div class="quadradoRed" id="id6" draggable="true" ondragstart="inicioDrag(event)" ondragend="">4</div>
+    <div class="quadradoRed" id="id7" draggable="true" ondragstart="inicioDrag(event)" ondragend="">4</div>
+    
+
+    <script>
+        function inicioDrag(event){
+            event.dataTransfer.setData('divRed',event.target.id)
+        }
+
+        function drop(event){
+            var id=event.dataTransfer.getData('divRed')
+            var elementoHTML=document.getElementById(id)
+            event.target.appendChild(elementoHTML)
+        }
+
+        function dragOver(event){
+            event.preventDefault();
+        }
+
+        function soma(event){
+            var id=event.dataTransfer.getData('divRed')
+            var numero=parseInt(document.getElementById(id).innerHTML)
+            var valor=parseInt(document.getElementById('blue').innerHTML)
+            var soma=valor+numero
+            document.getElementById('blue').innerHTML=soma
+
+        }
+    </script>
+</body>
+</html>

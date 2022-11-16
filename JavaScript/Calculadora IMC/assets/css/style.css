@@ -1,0 +1,28 @@
+.formulario-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.formulario-div button{
+    width: 100%;
+}
+
+.areas-input{
+    margin:20px 0
+}
+
+.resultado{
+    border-top: 2px solid black;
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+.resultado h2{
+    text-align: center;
+}

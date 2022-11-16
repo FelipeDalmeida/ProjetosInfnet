@@ -1,0 +1,11 @@
+*{padding: 0; margin:0;}
+
+
+.calculadoraRendaFixa{
+    border: 2px solid;
+}
+
+.tipo:first-child{
+    text-align-last: center;
+}
+

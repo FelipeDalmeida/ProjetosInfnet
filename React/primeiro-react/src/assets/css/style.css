@@ -1,0 +1,14 @@
+*{transition: linear all 0.3s;}
+
+.boxSizingBB{
+    box-sizing: border-box;
+}
+
+.home-login{
+    background-color: rgb(227, 82, 20);
+    height: 100vh;
+}
+
+
+
+
