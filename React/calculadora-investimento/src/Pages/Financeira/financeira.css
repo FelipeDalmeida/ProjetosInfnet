@@ -1,0 +1,21 @@
+*{font-family: 'Roboto', sans-serif;}
+
+.select-bg-color{
+    background-color: var(--main-color) !important;
+    color: white;
+    display: inline-block;
+    
+    
+}
+
+.table-custom>tbody>tr:nth-child(even){
+    background-color: #cce0fe;
+}
+
+.table-custom>thead>th{
+    background-color: #cce0fe;
+}
+
+.zindex{
+    z-index: 1;
+}

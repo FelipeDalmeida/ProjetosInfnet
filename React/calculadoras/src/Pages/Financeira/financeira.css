@@ -1,0 +1,5 @@
+.select-bg-color{
+    background-color: var(--main-color) !important;
+    color: white;
+}
+
