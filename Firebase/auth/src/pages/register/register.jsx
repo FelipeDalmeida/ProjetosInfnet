@@ -8,7 +8,8 @@ import Grid from '@mui/material/Grid';
 import CheckBox from '../../components/checkbox/checkbox';
 import {useNavigate } from "react-router";
 import { useState } from 'react'
-import {signUpWithEmailPassword} from '../../services/auth'
+import {singUpModified} from '../../services/auth'
+import { setDBData } from "../../services/db"
 
 const Register=()=>{
     const loginStyle={
@@ -22,6 +23,7 @@ const Register=()=>{
     
     const [nome,setNome]=useState("")
     const [email,setEmail]=useState("")
+    const [userInfo,setUserInfo]=useState({name:"",email:""})
     const [email2,setEmail2]=useState({value:"",error:null})
     const [senha,setSenha]=useState("")
     const [senha2,setSenha2]=useState({value:"",error:null})
@@ -29,31 +31,38 @@ const Register=()=>{
 
 
 
-
     const navigate=useNavigate();
     const goToPage=()=>{navigate('/login')}
 
-
+    const cadastraUsuario=async()=>{
+        const userUID= await singUpModified(userInfo.email,senha)
+        
+        if(userUID){
+            console.log("Usuário Registrado")
+            setDBData(userUID,userInfo)
+        }     
+    }
 
     const validaRegistro=()=>{
         
 
-        if(email!==email2.value){
+        if(userInfo.email!==email2.value){
             setEmail2({...email2, error:"E-mails digitados não coincidem"})
         } else {
             setEmail2({...email2, error:null})
+            cadastraUsuario()
         }
         
-        if(senha!==senha2.value){
-            setSenha2({...senha2, error:"Senhas digitada não coincide"})
-        } else{
-            setSenha2({...senha2, error:null})
-        }
+        // if(senha!==senha2.value){
+        //     setSenha2({...senha2, error:"Senhas digitada não coincide"})
+        // } else{
+        //     setSenha2({...senha2, error:null})
+        // }
 
-        if(email2.error==null && senha2.error==null){
-            signUpWithEmailPassword(email,senha)
-            console.log("abacaxi")
-        }
+        // if(email2.error==null && senha2.error==null){
+        //     signUpWithEmailPassword(email,senha,setUserID)
+        //     console.log("Usuário Registrado")
+        // }
     }
 
     const validaChekbox=()=>{
@@ -64,11 +73,13 @@ const Register=()=>{
     return <div style={loginStyle}>
         <Img img={Logo} style={{height: "200px", display: "block",  margin: "10px auto 50px"}}/>
         <Text text={"Faça seu Registro"} type={"h3"} style={{fontWeight:"200",}}/>
-        <Input label="Nome" fullWidth={true} type="text" value={nome} onChange={(e)=>setNome(e.target.value)}/>
-        <Input label="E-mail" fullWidth={true} type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+        {/* <Input label="Nome" fullWidth={true} type="text" value={nome} onChange={(e)=>setNome(e.target.value)}/> */}
+        <Input label="Nome" fullWidth={true} type="text" value={userInfo.nome} onChange={(e)=>setUserInfo({...userInfo,name:e.target.value})}/>
+        {/* <Input label="E-mail" fullWidth={true} type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/> */}
+        <Input label="E-mail" fullWidth={true} type="email" value={userInfo.email} onChange={(e)=>setUserInfo({...userInfo,email:e.target.value})}/>
         <Input label="Confirme Seu E-mail" fullWidth={true} type="email" value={email2.value} onChange={(e)=>setEmail2({...email2,value:e.target.value})} errorText={email2.error}/>
         <Input label="Senha" fullWidth={true} type="password" value={senha} onChange={(e)=>setSenha(e.target.value)}/>
-        <Input label="Confirme Sua Senha" fullWidth={true} type="password" value={senha2.value} onChange={(e)=>setSenha2({...senha2,value:e.target.value})} errorText={senha2.error}/>
+        {/* <Input label="Confirme Sua Senha" fullWidth={true} type="password" value={senha2.value} onChange={(e)=>setSenha2({...senha2,value:e.target.value})} errorText={senha2.error}/> */}
         <CheckBox checked={isChecked} onChange={validaChekbox}  style={{color:corPrincipal}} label={"Aceito os termos"}/>
         <Grid container spacing={0} style={{boxSizing:"border-box"}}>
             <Grid item xs={6} style={{boxSizing:"border-box", padding:"0 5 0 0px" }}><Btn type="button" fullWidth={true} title={"Login"} onClick={goToPage} variant={"outlined"} size={"large"}/></Grid>

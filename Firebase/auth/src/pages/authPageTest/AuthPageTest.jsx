@@ -4,10 +4,16 @@ import IsAuth from '../../components/auth/isauth'
 import NotAuth from '../../components/auth/notAuth'
 const AuthPageTest=()=>{
     const [auth,setAuth]=useState(false)
+    const [userID,setUserID]=useState("")
 
-    useEffect(()=>{verifyUserConected(setAuth)})
 
-    return auth?<IsAuth/>:<NotAuth/>
+
+    useEffect(()=>{
+        verifyUserConected(setAuth,setUserID)
+        console.log(userID)},[auth,userID])
+        
+
+    return auth?<IsAuth userID={userID}/>:<NotAuth/>
 }
 
 export default AuthPageTest

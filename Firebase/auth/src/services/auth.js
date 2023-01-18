@@ -11,7 +11,7 @@ function signInWithEmailPassword(email,password,setError) {
       // Signed in
       var user = userCredential.user;
       console.log(user)
-      console.log(false)
+
       setError((_v)=>({..._v,error:null}))
       // ...
     })
@@ -27,14 +27,30 @@ function signInWithEmailPassword(email,password,setError) {
   // [END auth_signin_password]
 }
 
-function signUpWithEmailPassword(email,password) {
+const singInModified= async(email,password,setError)=>{ //função modificada para conseguir esperar resposta na pagina de login
+  const response= await firebase.auth().signInWithEmailAndPassword(email, password)
+  .catch((error)=>{
+    if(error){
+      console.log(error.message);
+      var errorMessage = error.message;
+      setError((_v)=>({..._v,error:errorMessage}))
+      return null
+      }})
+  if(response){
+    setError((_v)=>({..._v,error:null}))
+    return response
+  }
+}
+
+function signUpWithEmailPassword(email,password,setUserID) {
 
   // [START auth_signup_password]
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in 
       var user = userCredential.user;
-      console.log(user)
+      setUserID(user.uid)
+      console.log(`ID: ${user.uid}`)
       // ...
     })
     .catch((error) => {
@@ -43,7 +59,20 @@ function signUpWithEmailPassword(email,password) {
       // ..
       console.log(errorMessage)
     });
+    
   // [END auth_signup_password]
+}
+
+const singUpModified=async(email,password)=>{
+  const response= await firebase.auth().createUserWithEmailAndPassword(email, password)
+  .catch((error)=>{
+    if(error){
+      console.log(error.message);
+      return null
+      }})
+  if(response){
+    return response.user.uid
+  }
 }
 
 function sendEmailVerification() {
@@ -73,14 +102,14 @@ function sendPasswordReset() {
 }
 
 
-function verifyUserConected(setAuth){
+function verifyUserConected(setAuth,setUserID){
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
     if (user) {
     
     const uid = user.uid;
-    console.log(uid)
     setAuth(true)
+    setUserID(user.uid)
     // ...
     } else {
         setAuth(false)
@@ -102,4 +131,4 @@ function singOut(){
         // An error happened.
       });
 }
-export {signInWithEmailPassword,signUpWithEmailPassword,verifyUserConected,singOut}
+export {signInWithEmailPassword,signUpWithEmailPassword,verifyUserConected,singOut,singInModified,singUpModified}

@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import CheckBox from '../../components/checkbox/checkbox';
 import {useNavigate } from "react-router";
 import { useEffect, useState } from 'react'
-import {signInWithEmailPassword} from '../../services/auth'
+import {signInWithEmailPassword,singInModified} from '../../services/auth'
 
 
 
@@ -37,9 +37,14 @@ const Login=()=>{
 
 
 
-    const validaLogin=()=>{
-        signInWithEmailPassword(email.value,senha,setEmail);
-      
+    const validaLogin=async ()=>{
+
+        const response= await singInModified(email.value,senha,setEmail)
+        
+        if(response){
+            goToPage("/paginateste")
+        }
+  
     }
 
     const validaChekbox=()=>{
